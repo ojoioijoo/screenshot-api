@@ -1,8 +1,10 @@
-const express = require('express');
-const { chromium } = require('playwright');
-const app = express();
+const express = require("express");
+const { chromium } = require("playwright");
 
-app.get('/screenshot', async (req, res) => {
+const app = express();
+const port = process.env.PORT || 10000;
+
+app.get("/api/screenshot", async (req, res) => {
     const url = req.query.url;
     const device = req.query.device || "desktop"; // default: desktop
 
@@ -35,8 +37,6 @@ app.get('/screenshot', async (req, res) => {
     }
 });
 
-// Ανάθεσε το port που παρέχει το Render (ή το περιβάλλον ανάπτυξης)
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });

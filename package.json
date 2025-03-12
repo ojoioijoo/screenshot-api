@@ -17,9 +17,8 @@
     "url": "https://github.com/ojoioijoo/screenshot-api/issues"
   },
   "homepage": "https://github.com/ojoioijoo/screenshot-api#readme",
-  "description": "",
   "dependencies": {
-    "express": "^4.17.3",
+    "express": "^4.17.1",
     "playwright": "^1.51.0"
   }
 }

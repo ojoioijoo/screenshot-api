@@ -4,6 +4,10 @@ const { chromium } = require('playwright');
 const app = express();
 const port = 3000;
 
+app.get("/", (req, res) => {
+  res.send("API is running.");
+});
+
 app.get('/screenshot', async (req, res) => {
   const url = req.query.url;
   const device = req.query.device || 'desktop'; // default: desktop
