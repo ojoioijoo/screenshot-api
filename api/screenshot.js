@@ -1,6 +1,4 @@
 const { chromium } = require("playwright");
-const fs = require("fs");
-const path = require("path");
 
 module.exports = async (req, res) => {
     const url = req.query.url;
@@ -24,17 +22,11 @@ module.exports = async (req, res) => {
         }
 
         await page.goto(url, { waitUntil: "load", timeout: 10000 });
-
-        // Παίρνουμε το screenshot και το αποθηκεύουμε τοπικά
         const screenshot = await page.screenshot();
-        const screenshotPath = path.join(__dirname, "screenshot.png"); // Όνομα αρχείου και διαδρομή
-
-        // Αποθήκευση τοπικά
-        fs.writeFileSync(screenshotPath, screenshot);
-        console.log("Screenshot saved to:", screenshotPath);
 
         await browser.close();
-        res.status(200).send("Screenshot saved to screenshot.png");
+        res.setHeader("Content-Type", "image/png");
+        res.send(screenshot);
     } catch (error) {
         console.error("Error while taking screenshot:", error);
         res.status(500).json({ error: "Something went wrong." });
