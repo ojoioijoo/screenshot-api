@@ -2,18 +2,8 @@
     "version": 2,
     "builds": [
       {
-        "src": "index.js",
+        "src": "api/screenshot.js",
         "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/screenshot",
-        "dest": "/index.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/index.js"
       }
     ]
   }

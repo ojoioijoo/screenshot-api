@@ -5,12 +5,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojoioijoo/screenshot-api.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ojoioijoo/screenshot-api/issues"
+  },
+  "homepage": "https://github.com/ojoioijoo/screenshot-api#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2",
     "playwright": "^1.51.0"
   }
 }
