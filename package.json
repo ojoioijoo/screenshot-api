@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "api/screenshot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "vercel-build": "npx playwright install",
-    "start": "node api/screenshot.js"
+    "start": "node api/screenshot.js",
+    "vercel-build": "npx playwright install"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,7 @@
   "homepage": "https://github.com/ojoioijoo/screenshot-api#readme",
   "description": "",
   "dependencies": {
+    "express": "^4.17.3",
     "playwright": "^1.51.0"
   }
 }
